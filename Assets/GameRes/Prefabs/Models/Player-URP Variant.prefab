@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &761686333111685818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325582589147940180}
+  m_Layer: 0
+  m_Name: HeadPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325582589147940180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761686333111685818}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2478111137915032034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2918842945539828352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +87,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4251789302290088949, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 856fe3cb3c390de428b3aca9bc794c9c, type: 2}
     m_RemovedComponents:
     - {fileID: 5517828824550266498, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
     - {fileID: 785267643850636131, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
@@ -67,6 +102,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 785267643850636130, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3121181392906542499}
+    - targetCorrespondingSourceObject: {fileID: 785267643850636130, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1325582589147940180}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 785267643850636061, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
       insertIndex: -1
@@ -74,6 +112,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 785267643850636061, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
       insertIndex: -1
       addedObject: {fileID: 741630793417155491}
+    - targetCorrespondingSourceObject: {fileID: 785267643850636061, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3583230403483691042}
+    - targetCorrespondingSourceObject: {fileID: 785267643850636061, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 479417021144937164}
   m_SourcePrefab: {fileID: 100100000, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}
 --- !u!1 &2478111137915031965 stripped
 GameObject:
@@ -130,6 +174,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3583230403483691042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478111137915031965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb949149608cf547834074d42c8637f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headPoint: {fileID: 1325582589147940180}
+  moveSpeed: 5
+  playerData: {fileID: 11400000, guid: 4c0c1deb262cd1d4d937f478dd9a8176, type: 2}
+--- !u!114 &479417021144937164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478111137915031965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0299bc5e4431c0f46a248853d00755fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3583230403483691042}
 --- !u!4 &2478111137915032034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 785267643850636130, guid: 10a99c550d68610468d14ba69c5e5309, type: 3}

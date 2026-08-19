@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795eb4138c35b3f40bcf8a16c86af22f, type: 3}
+  m_Name: Exp_Default
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1285072362522786914, guid: 1d07072020e820440b2530a3ce4366fe, type: 3}
+  preloadCount: 10
+  collectRadius: 2
+  moveSpeed: 12

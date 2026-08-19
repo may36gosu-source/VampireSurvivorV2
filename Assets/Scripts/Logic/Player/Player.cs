@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using VampireSurvivors.Core;
+using VampireSurvivors.Data;
+using VampireSurvivors.Common;
 namespace VampireSurvivors.Logic
 {
     public class Player : Entity
     {
-        [SerializeField] private FixedJoystick joystick;
+        private Joystick joystick;
         [SerializeField] private float moveSpeed;
 
-        #region ScriptableObject
-
-        #endregion
+        [SerializeField] private PlayerData playerData;
+     
 
         private Animator animator;
         private Rigidbody rb;
@@ -29,7 +30,11 @@ namespace VampireSurvivors.Logic
 
         private CapsuleCollider capsuleCollider;
 
-
+        public void Initialize(Joystick joystick)
+        {
+            this.joystick = joystick;
+            LocalPlayer.Register(this);
+        }
 
         private void Awake()
         {
@@ -40,9 +45,13 @@ namespace VampireSurvivors.Logic
             animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody>();
 
-            DisplayName = "Player";
+            DisplayName = "Player";   
 
-            LocalPlayer.Register(this);
+            moveSpeed = playerData.moveSpeed;
+        	currentAttack = playerData.attack;
+
+        	MaxHP = playerData.maxHP;
+        	currentHP = MaxHP;
 
             
         }
@@ -54,12 +63,36 @@ namespace VampireSurvivors.Logic
 
         private void Update()
         {
+            moveDirection = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
 
+            if (moveDirection.sqrMagnitude > 1f)
+            {
+                moveDirection.Normalize();
+            }
+
+
+            animator.SetFloat("Speed", moveDirection.magnitude);
+
+            UpdateRotation();
         }
 
         private void FixedUpdate()
         {
 
+            Vector3 velocity = moveDirection * moveSpeed;
+
+
+            velocity.y = rb.linearVelocity.y;
+
+            rb.linearVelocity = velocity;
+        }
+
+        // xoay mặt
+        private void UpdateRotation()
+        {
+            if (moveDirection.sqrMagnitude <= 0.01f)
+                return;
+            transform.rotation = Quaternion.LookRotation(moveDirection);
         }
 
         private void OnEnable()
