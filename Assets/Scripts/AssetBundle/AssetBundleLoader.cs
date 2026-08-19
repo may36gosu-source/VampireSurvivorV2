@@ -37,7 +37,8 @@ namespace VampireSurvivors.Logic{
 
         private void LoadPlayer()
         {
-            string bundlePath = Path.Combine(Application.streamingAssetsPath, "AssetBundles", "Windows", BundleName);
+            // string bundlePath = Path.Combine(Application.streamingAssetsPath, "AssetBundles", "Windows", BundleName);
+            string bundlePath = GetBundlePath();
 
             Debug.Log($"[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
 
@@ -45,9 +46,23 @@ namespace VampireSurvivors.Logic{
             // Check file
             // -----------------------------------------
 
-            if (!File.Exists(bundlePath))
+            // if (!File.Exists(bundlePath))
+            // {
+            //     Debug.LogError($"[AssetBundleLoader] " + $"Không tìm thấy AssetBundle:\n" + $"{bundlePath}");
+
+            //     return;
+            // }
+
+            // string bundlePath = GetBundlePath();
+
+            Debug.Log("[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
+
+            if (!BetterStreamingAssets.FileExists(bundlePath))
             {
-                Debug.LogError($"[AssetBundleLoader] " + $"Không tìm thấy AssetBundle:\n" + $"{bundlePath}");
+                Debug.LogError(
+                    "[AssetBundleLoader] " +
+                    $"Không tìm thấy AssetBundle:\n{bundlePath}"
+                );
 
                 return;
             }
@@ -56,7 +71,8 @@ namespace VampireSurvivors.Logic{
             // Load AssetBundle
             // -----------------------------------------
 
-            assetBundle = AssetBundle.LoadFromFile(bundlePath);
+            assetBundle = BetterStreamingAssets.LoadAssetBundle(bundlePath);
+            // assetBundle = AssetBundle.LoadFromFile(bundlePath);
 
             if (assetBundle == null)
             {
@@ -132,6 +148,15 @@ namespace VampireSurvivors.Logic{
             player.name = PlayerPrefabName;
 
             Debug.Log( $"[AssetBundleLoader] " +$"Player spawned: {player.name}");
+        }
+
+        private string GetBundlePath()
+        {
+        #if UNITY_ANDROID
+            return "AssetBundles/Android/models.unity3d";
+        #else
+            return "AssetBundles/Windows/models.unity3d";
+        #endif
         }
 
         private void OnDestroy()

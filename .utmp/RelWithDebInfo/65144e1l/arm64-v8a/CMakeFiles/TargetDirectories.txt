@@ -1,0 +1,5 @@
+E:/GihOT/VampireSurvivorsV2/.utmp/RelWithDebInfo/65144e1l/arm64-v8a/CMakeFiles/edit_cache.dir
+E:/GihOT/VampireSurvivorsV2/.utmp/RelWithDebInfo/65144e1l/arm64-v8a/CMakeFiles/rebuild_cache.dir
+E:/GihOT/VampireSurvivorsV2/.utmp/RelWithDebInfo/65144e1l/arm64-v8a/GameActivity/CMakeFiles/game.dir
+E:/GihOT/VampireSurvivorsV2/.utmp/RelWithDebInfo/65144e1l/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+E:/GihOT/VampireSurvivorsV2/.utmp/RelWithDebInfo/65144e1l/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
