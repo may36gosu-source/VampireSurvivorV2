@@ -35,109 +35,198 @@ namespace VampireSurvivors.Logic{
             }
         }
 
-        private void LoadPlayer()
+        private string GetBundlePath()
         {
-            // string bundlePath = Path.Combine(Application.streamingAssetsPath, "AssetBundles", "Windows", BundleName);
-            string bundlePath = GetBundlePath();
+        #if UNITY_ANDROID
+            return "AssetBundles/Android/models.unity3d";
+        #else
+            return "AssetBundles/Windows/models.unity3d";
+        #endif
+        }
+
+        private string GetBundlePath(string bundleName)
+        {
+            #if UNITY_ANDROID
+                return $"AssetBundles/Android/{bundleName}";
+            #else
+                return $"AssetBundles/Windows/{bundleName}";
+            #endif
+        }
+
+        private AssetBundle LoadBundle(string bundleName)
+        {
+         
+            bool cacheBundle = AssetBundleCache.TryGet(bundleName, out AssetBundle bundle);
+
+            if(cacheBundle)
+            {
+                return bundle;
+            }
+          
+            string bundlePath = GetBundlePath(bundleName);
 
             Debug.Log($"[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
 
-            // -----------------------------------------
-            // Check file
-            // -----------------------------------------
-
-            // if (!File.Exists(bundlePath))
-            // {
-            //     Debug.LogError($"[AssetBundleLoader] " + $"Không tìm thấy AssetBundle:\n" + $"{bundlePath}");
-
-            //     return;
-            // }
-
-            // string bundlePath = GetBundlePath();
-
-            Debug.Log("[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
-
             if (!BetterStreamingAssets.FileExists(bundlePath))
             {
-                Debug.LogError(
-                    "[AssetBundleLoader] " +
-                    $"Không tìm thấy AssetBundle:\n{bundlePath}"
-                );
-
-                return;
+                Debug.LogError( "[AssetBundleLoader] " + $"Không tìm thấy AssetBundle:\n{bundlePath}");
+                return null;
             }
 
-            // -----------------------------------------
-            // Load AssetBundle
-            // -----------------------------------------
+            AssetBundle loadedBundle = BetterStreamingAssets.LoadAssetBundle(bundlePath);
 
-            assetBundle = BetterStreamingAssets.LoadAssetBundle(bundlePath);
-            // assetBundle = AssetBundle.LoadFromFile(bundlePath);
-
-            if (assetBundle == null)
+            if (loadedBundle == null)
             {
                 Debug.LogError($"[AssetBundleLoader] " + $"Load AssetBundle thất bại:\n" + $"{bundlePath}");
-
-                return;
+                return null;
             }
 
-            Debug.Log($"[AssetBundleLoader] " + $"Loaded: {BundleName}");
+            AssetBundleCache.Add(bundleName, loadedBundle); // add vào cache
 
-            // -----------------------------------------
-            // Debug asset list
-            // -----------------------------------------
+            return loadedBundle;
 
+        }
+
+        private GameObject LoadPrefab(string bundleName, string prefabName) {
+            AssetBundle bundle =  LoadBundle(bundleName);
+
+            if(!bundle) {
+                return null;
+            }
+
+            string findAsset = FindAssetPath(bundle, prefabName);
+
+            if(string.IsNullOrEmpty(findAsset))
+                return null;
+
+            
+            GameObject prefab = bundle.LoadAsset<GameObject>(findAsset);
+
+            if (prefab == null)
+            {
+                Debug.LogError( $"[AssetBundleLoader] Không load được prefab:\n{findAsset}");
+
+                return null;
+            }
+
+            return prefab;
+
+        }
+
+        private string FindAssetPath(AssetBundle assetBundle, string prefabName) {
             string[] assetNames = assetBundle.GetAllAssetNames();
 
             Debug.Log($"[AssetBundleLoader] " + $"Asset count: {assetNames.Length}");
-
-            foreach (string assetName in assetNames)
-            {
-                Debug.Log($"[AssetBundleLoader] Asset: " + $"{assetName}");
-            }
 
             // -----------------------------------------
             // Find Player prefab
             // -----------------------------------------
 
-            string playerAssetPath = null;
 
-            foreach (string assetName in assetNames)
+            foreach (string assetPath in assetNames)
             {
-                string fileName = Path.GetFileNameWithoutExtension(assetName);
+                string fileName = Path.GetFileNameWithoutExtension(assetPath);
 
-                if (string.Equals(fileName, PlayerPrefabName,System.StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(fileName, prefabName, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    playerAssetPath = assetName;
-                    break;
+                    return assetPath;
                 }
             }
+            return null;
+        }
 
-            if (string.IsNullOrEmpty(playerAssetPath))
-            {
-                Debug.LogError($"[AssetBundleLoader] " + $"Không tìm thấy prefab:\n" + $"{PlayerPrefabName}");
+        private void LoadPlayer()
+        {
+            // string bundlePath = Path.Combine(Application.streamingAssetsPath, "AssetBundles", "Windows", BundleName);
+            // string bundlePath = GetBundlePath();
 
-                return;
-            }
+            // Debug.Log($"[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
 
-            // -----------------------------------------
-            // Load prefab
-            // -----------------------------------------
+            // Debug.Log("[AssetBundleLoader] " + $"Load bundle:\n{bundlePath}");
 
-            GameObject playerPrefab = assetBundle.LoadAsset<GameObject>(playerAssetPath);
+            // if (!BetterStreamingAssets.FileExists(bundlePath))
+            // {
+            //     Debug.LogError( "[AssetBundleLoader] " + $"Không tìm thấy AssetBundle:\n{bundlePath}");
 
-            if (playerPrefab == null)
-            {
-                Debug.LogError($"[AssetBundleLoader] " + $"Không load được prefab:\n" + $"{playerAssetPath}");
+            //     return;
+            // }
 
-                return;
-            }
+            // // -----------------------------------------
+            // // Load AssetBundle
+            // // -----------------------------------------
 
-            Debug.Log($"[AssetBundleLoader] " + $"Prefab loaded: {playerPrefab.name}");
+            // assetBundle = BetterStreamingAssets.LoadAssetBundle(bundlePath);
+            // // assetBundle = AssetBundle.LoadFromFile(bundlePath);
+
+            // if (assetBundle == null)
+            // {
+            //     Debug.LogError($"[AssetBundleLoader] " + $"Load AssetBundle thất bại:\n" + $"{bundlePath}");
+
+            //     return;
+            // }
+
+            // Debug.Log($"[AssetBundleLoader] " + $"Loaded: {BundleName}");
+
+            // // -----------------------------------------
+            // // Debug asset list
+            // // -----------------------------------------
+
+            // string[] assetNames = assetBundle.GetAllAssetNames();
+
+            // Debug.Log($"[AssetBundleLoader] " + $"Asset count: {assetNames.Length}");
+
+            // foreach (string assetName in assetNames)
+            // {
+            //     Debug.Log($"[AssetBundleLoader] Asset: " + $"{assetName}");
+            // }
+
+            // // -----------------------------------------
+            // // Find Player prefab
+            // // -----------------------------------------
+
+            // string playerAssetPath = null;
+
+            // foreach (string assetName in assetNames)
+            // {
+            //     string fileName = Path.GetFileNameWithoutExtension(assetName);
+
+            //     if (string.Equals(fileName, PlayerPrefabName,System.StringComparison.OrdinalIgnoreCase))
+            //     {
+            //         playerAssetPath = assetName;
+            //         break;
+            //     }
+            // }
+
+            // if (string.IsNullOrEmpty(playerAssetPath))
+            // {
+            //     Debug.LogError($"[AssetBundleLoader] " + $"Không tìm thấy prefab:\n" + $"{PlayerPrefabName}");
+
+            //     return;
+            // }
+
+            // // -----------------------------------------
+            // // Load prefab
+            // // -----------------------------------------
+
+            // GameObject playerPrefab = assetBundle.LoadAsset<GameObject>(playerAssetPath);
+
+            // if (playerPrefab == null)
+            // {
+            //     Debug.LogError($"[AssetBundleLoader] " + $"Không load được prefab:\n" + $"{playerAssetPath}");
+
+            //     return;
+            // }
+
+            // Debug.Log($"[AssetBundleLoader] " + $"Prefab loaded: {playerPrefab.name}");
 
             // -----------------------------------------
             // Spawn
             // -----------------------------------------
+
+            GameObject playerPrefab = LoadPrefab(BundleName, PlayerPrefabName);
+
+            if(playerPrefab == null)
+                return;
 
             Transform spawn = spawnPoint != null ? spawnPoint : transform;
 
@@ -150,14 +239,7 @@ namespace VampireSurvivors.Logic{
             Debug.Log( $"[AssetBundleLoader] " +$"Player spawned: {player.name}");
         }
 
-        private string GetBundlePath()
-        {
-        #if UNITY_ANDROID
-            return "AssetBundles/Android/models.unity3d";
-        #else
-            return "AssetBundles/Windows/models.unity3d";
-        #endif
-        }
+       
 
         private void OnDestroy()
         {

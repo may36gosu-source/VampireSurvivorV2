@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using UnityEngine;
 using VampireSurvivors.Common;
 
@@ -15,7 +14,7 @@ namespace VampireSurvivors.Logic
 
             if(result == null)
             {
-                UnityEngine.Debug.LogError("Joystick not found");
+                Debug.LogError("Joystick not found");
                 return;
             }
             player.Initialize(result);

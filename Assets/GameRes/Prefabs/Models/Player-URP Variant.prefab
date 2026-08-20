@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFA_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5835664970564399551, guid: dbe4191aa8a702544aef194689f1c4d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

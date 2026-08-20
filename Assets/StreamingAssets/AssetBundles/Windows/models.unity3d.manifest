@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2083434598
+CRC: 2922998715
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a085c1147cadc910c38be597866f63ac
+    Hash: 31d7a25cb68c0af8c7111e1e7c9d3573
   TypeTreeHash:
     serializedVersion: 2
     Hash: 7f4aeaca5d22f0f0365093b5b44b23ea
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: ae316b04f6879ea14869ebf1c17fcf8f
+    Hash: 50a6603e6c463f0dbd17b2be2802456a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -51,5 +51,6 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/GameRes/Prefabs/Models/Monster07_02 Variant.prefab
 - Assets/GameRes/Prefabs/Models/Player-URP Variant.prefab
 Dependencies: []
