@@ -87,7 +87,7 @@ namespace VampireSurvivors.Logic{
 
         }
 
-        private GameObject LoadPrefab(string bundleName, string prefabName) {
+        public GameObject LoadPrefab(string bundleName, string prefabName) {
             AssetBundle bundle =  LoadBundle(bundleName);
 
             if(!bundle) {

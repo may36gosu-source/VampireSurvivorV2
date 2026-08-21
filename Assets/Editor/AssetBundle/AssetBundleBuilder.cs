@@ -125,11 +125,7 @@ public class AssetBundleBuilder : EditorWindow
     {
         Debug.Log("[AssetBundleBuilder] " + "Generating build list from Source Folder...");
 
-        AssetBundleResourceExporter.ExportBuildList(
-            bundleName,
-            sourceFolder,
-            buildList
-        );
+        AssetBundleResourceExporter.ExportBuildList(bundleName, sourceFolder, buildList);
 
         AssetDatabase.Refresh();
 

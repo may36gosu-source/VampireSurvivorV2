@@ -5,7 +5,7 @@ using VampireSurvivors.Data;
 using VampireSurvivors.Common;
 namespace VampireSurvivors.Logic
 {
-    public class Player : Entity
+    public class Player : Entity, IDamageable
     {
         private Joystick joystick;
         [SerializeField] private float moveSpeed;
@@ -93,6 +93,32 @@ namespace VampireSurvivors.Logic
             if (moveDirection.sqrMagnitude <= 0.01f)
                 return;
             transform.rotation = Quaternion.LookRotation(moveDirection);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (isDead)
+                return;
+
+            Vector3 hitPosition = HeadPoint.position;
+
+            Vector3 hitDirection = Forward;
+
+            currentHP = Mathf.Max(0, currentHP - damage);
+
+            GameEvents.EntityDamaged(this);
+
+            GameEvents.PopupDamage(hitPosition, hitDirection, damage);
+
+
+            if (currentHP == 0)
+            {
+                Dead();
+            }
+        }
+
+        private void Dead() {
+
         }
 
         private void OnEnable()

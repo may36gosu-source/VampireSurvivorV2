@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Monster_Default
   m_EditorClassIdentifier: 
   displayName: Slime
-  prefab: {fileID: 4787734284849576031, guid: b9067838994a4fa489d3d3ea62c8d2af, type: 3}
+  bundleName: models.unity3d
+  prefabName: Monster07_02 Variant
   maxHP: 60
   expReward: 10
   moveSpeed: 2.5
   attack: 10
-  detectRange: 2
   attackRange: 2
   attackCooldown: 0.5
   attackHitTime: 0.5
+  wanderRadius: 4
+  detectRange: 8
+  returnRange: 12
+  stopDistance: 1.5

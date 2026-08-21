@@ -6,7 +6,8 @@ namespace VampireSurvivors.Data
     {
         [Header("Identity")]
         public string displayName = "Slime";
-        public GameObject prefab;
+        public string bundleName = "models.unity3d";
+        public string prefabName = "Monster07_02 Variant";
 
         [Header("Stats")]
         public int maxHP = 50;
@@ -18,7 +19,7 @@ namespace VampireSurvivors.Data
         [Header("Combat")]
         public int attack = 10;
 
-        public float detectRange = 8f;
+        // public float detectRange = 8f;
 
         public float attackRange = 2f;
 
@@ -26,5 +27,11 @@ namespace VampireSurvivors.Data
 
         [Range(0f, 1f)]
         public float attackHitTime = 0.5f;
+
+        [Header("AI")]
+        public float wanderRadius = 4f;
+        public float detectRange = 8f;
+        public float returnRange = 12f;
+        public float stopDistance = 1.5f;
     }
 }
