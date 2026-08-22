@@ -1,2 +1,0 @@
-models.unity3d|Assets/GameRes/Prefabs/Models/Monster07_02 Variant.prefab
-models.unity3d|Assets/GameRes/Prefabs/Models/Player-URP Variant.prefab

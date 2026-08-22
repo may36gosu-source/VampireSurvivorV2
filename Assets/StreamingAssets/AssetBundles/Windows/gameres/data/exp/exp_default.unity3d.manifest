@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 519023962
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ce6d6df8b6fc36ca9c2c8f50eedab77c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 69b04469139931b346dc0167469c9d93
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ae3e64e47d3454dd659af6160a62c9d9
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 795eb4138c35b3f40bcf8a16c86af22f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Data/Exp/Exp_Default.asset
+Dependencies: []

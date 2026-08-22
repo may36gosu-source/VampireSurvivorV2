@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3000577294
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 87224db3c2a2ae17c0faa1b8d3b0168b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 32d918a08bd342ff9a789e5660ea46ac
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: df84385e19438e486b52784a42266cbb
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 4a35e30bb3db77243a10cbe2e36c4f3b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Data/Monster/Monster_Default.asset
+Dependencies: []

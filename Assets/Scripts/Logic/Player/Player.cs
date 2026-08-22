@@ -45,12 +45,13 @@ namespace VampireSurvivors.Logic
             animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody>();
 
-            DisplayName = "Player";   
+            DisplayName = "Player"; 
+            Debug.Log($"PlayerData = {playerData}");  
 
-            moveSpeed = playerData.moveSpeed;
-        	currentAttack = playerData.attack;
+            // moveSpeed = playerData.moveSpeed;
+        	// currentAttack = playerData.attack;
 
-        	MaxHP = playerData.maxHP;
+        	// MaxHP = playerData.maxHP;
         	currentHP = MaxHP;
 
             

@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3419790059
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 309c0cde2bf6a9491a6c8e6aafcc96d6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 147058da82bee871bbce28e472030442
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 35b60b52c2e67abb39ecd4262f20cb16
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/AnimationController/Monster.controller
+Dependencies: []

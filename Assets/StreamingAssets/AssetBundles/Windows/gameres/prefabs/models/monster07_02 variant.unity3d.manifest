@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 697133466
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e5269278d96b123b1ec921996e45bf75
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 20e603d3b19953a46204ce8279d2f03d
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f1de409a6432190588d079988e15a107
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Prefabs/Models/Monster07_02 Variant.prefab
+Dependencies:
+- E:/GihOT/VampireSurvivorsV2/Assets/StreamingAssets/AssetBundles/Windows/gameres/animationcontroller/monster.unity3d

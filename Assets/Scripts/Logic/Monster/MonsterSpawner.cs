@@ -57,19 +57,19 @@ namespace VampireSurvivors.Logic {
         {
 
 
-            if(!bundleLoader) 
-                return; // bundle không tồn tại
+            // if(!bundleLoader) 
+            //     return; // bundle không tồn tại
             
-            // get prefab
-            GameObject prefab = bundleLoader.LoadPrefab(waveData.monsterData.bundleName, waveData.monsterData.prefabName);
+            // // get prefab
+            // GameObject prefab = bundleLoader.LoadPrefab(waveData.monsterData.bundleName, waveData.monsterData.prefabName);
 
-            if(prefab == null)
-                return;
+            // if(prefab == null)
+            //     return;
 
-            monsterPool = new ObjectPool(prefab, waveData.spawnCount, transform);
+            // monsterPool = new ObjectPool(prefab, waveData.spawnCount, transform);
 
         
-            SpawnWave();
+            // SpawnWave();
 
 
         }

@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 2775087202
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9bf296870860c3c0cabc3fb8bec1efe8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 93889b3033bc9e9653333a8954d95dd6
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 89b1596a5b129ebcb9b2af6e0476e88f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 15a58ce54ffc40947a90cab0e6db3fc9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6cb949149608cf547834074d42c8637f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 256f2ca58e816f24b80220bce60e7513, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0299bc5e4431c0f46a248853d00755fe, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Prefabs/Models/Player-URP Variant.prefab
+Dependencies:
+- E:/GihOT/VampireSurvivorsV2/Assets/StreamingAssets/AssetBundles/Windows/gameres/animationcontroller/newplayer.unity3d
+- E:/GihOT/VampireSurvivorsV2/Assets/StreamingAssets/AssetBundles/Windows/gameres/data/player/player_default.unity3d

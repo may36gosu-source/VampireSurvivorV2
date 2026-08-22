@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 507670277
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9d0fbe4bf3688edc854e65a90a075d31
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0afbb6721f5c169ee66bc7acfef0e842
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c3e04abbf087bc09a87c2048b585fe5e
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 15a58ce54ffc40947a90cab0e6db3fc9, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Data/Player/Player_Default.asset
+Dependencies: []

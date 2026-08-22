@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 4071951746
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a8550a2187ff32838bf8187c162cda72
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fc60acf66e4553bc894524d4f6a5ebf8
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 000529b9cbb464812be3bf597b7aaf52
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 44c87cd42934c8f48a3747b153cfc321, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Data/Weapon/Weapon_Default.asset
+Dependencies: []

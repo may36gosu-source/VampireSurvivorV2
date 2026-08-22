@@ -1,9 +1,46 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1842386820
+CRC: 4183822468
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: models.unity3d
+      Name: gameres/animationcontroller/monster.unity3d
       Dependencies: {}
+    Info_1:
+      Name: gameres/animationcontroller/newplayer.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: gameres/data/exp/exp_default.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: gameres/data/monster/monster_default.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: gameres/data/player/player_default.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: gameres/data/wavemonster/wavemonster_default.unity3d
+      Dependencies:
+        Dependency_0: gameres/data/monster/monster_default.unity3d
+    Info_6:
+      Name: gameres/data/weapon/weapon_default.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: gameres/materials/expblue.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: gameres/materials/ground_mat.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: gameres/materials/mat_slash_01.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: gameres/prefabs/models/monster07_02 variant.unity3d
+      Dependencies:
+        Dependency_0: gameres/animationcontroller/monster.unity3d
+    Info_11:
+      Name: gameres/prefabs/models/player-urp variant.unity3d
+      Dependencies:
+        Dependency_0: gameres/animationcontroller/newplayer.unity3d
+        Dependency_1: gameres/data/player/player_default.unity3d

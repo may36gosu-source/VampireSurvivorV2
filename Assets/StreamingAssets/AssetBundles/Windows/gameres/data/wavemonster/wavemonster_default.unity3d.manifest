@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 482393113
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0c76b8769c62cd3f50b592b03c54a48a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 43ed287817ebfd05d74e356e1e0db1d7
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 13ad1fa25df88e50c9016e2361413609
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c947de889946e4f9d4b3f2ef6ad51f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4a35e30bb3db77243a10cbe2e36c4f3b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/GameRes/Data/WaveMonster/WaveMonster_Default.asset
+Dependencies:
+- E:/GihOT/VampireSurvivorsV2/Assets/StreamingAssets/AssetBundles/Windows/gameres/data/monster/monster_default.unity3d

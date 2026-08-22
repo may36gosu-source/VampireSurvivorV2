@@ -1,0 +1,14 @@
+GameRes/AnimationController/Monster.unity3d
+GameRes/AnimationController/NewPlayer.unity3d
+GameRes/AssetBundle/Android/build_list.unity3d
+GameRes/AssetBundle/Windows/build_list.unity3d
+GameRes/Data/Exp/Exp_Default.unity3d
+GameRes/Data/Monster/Monster_Default.unity3d
+GameRes/Data/Player/Player_Default.unity3d
+GameRes/Data/WaveMonster/WaveMonster_Default.unity3d
+GameRes/Data/Weapon/Weapon_Default.unity3d
+GameRes/Materials/ExpBlue.unity3d
+GameRes/Materials/Ground_Mat.unity3d
+GameRes/Materials/MAT_Slash_01.unity3d
+GameRes/Prefabs/Models/Monster07_02 Variant.unity3d
+GameRes/Prefabs/Models/Player-URP Variant.unity3d
